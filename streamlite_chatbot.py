@@ -1,13 +1,14 @@
-import openai
+#import openai
 import os
 import pandas as pd
 import streamlit as st
 from streamlit_chat import message
 api_key = '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'
-openai.api_key = api_key
+#openai.api_key = api_key
 article_text = st.text_area("Enter your scientific texts to summarize")
 
 def generate_response(prompt):
+    return prompt
     completions = openai.Completion.create(
         engine = "text-davinci-003",
         prompt = prompt,

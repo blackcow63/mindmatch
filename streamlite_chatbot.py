@@ -17,7 +17,7 @@ def generate_response(prompt):
         temperature=0.5,
     )
     message = completions.choices[0].text
-    return message 
+    return message #bla bla bla
 #Creating the chatbot interface
 st.title("chatBot : Streamlit + openAI")
 

@@ -1,15 +1,15 @@
-pip install streamlit
-pip install streamlit-chat
-pip install openai
-
 import openai
 import os
 import pandas as pd
 import streamlit as st
 from streamlit_chat import message
+st.title('Virtual Therapist')
 api_key = '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'
-#openai.api_key = api_key
+openai.api_key = api_key
 article_text = st.text_area("Enter your scientific texts to summarize")
+output_size = st.radio( label = “What kind of output do you want?”, 
+                        options= [“To-The-Point”, “Concise”, “Detailed”]
+                     )
 
 def generate_response(prompt):
     return prompt
@@ -23,8 +23,6 @@ def generate_response(prompt):
     )
     message = completions.choices[0].text
     return message #bla bla bla
-#Creating the chatbot interface
-st.title("chatBot : Streamlit + openAI")
 
 # Storing the chat
 if 'generated' not in st.session_state:

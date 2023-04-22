@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from streamlit_chat import message
 st.title('Virtual Therapist')
-api_key = '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'
+api_key = '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'
 openai.api_key = api_key
 
 def generate_response(prompt):

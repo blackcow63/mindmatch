@@ -31,6 +31,7 @@ if 'generated' not in st.session_state:
 if 'past' not in st.session_state:
     st.session_state['past'] = []
 
+#TEST
 # We will get the user's input by calling the get_text function
 def get_text():
     input_text = st.text_input("Wirtualny Terapeuta:","Co Ci lezy na sercu? Jak się czujesz?", key="input")

@@ -8,6 +8,7 @@ api_key = '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'
 openai.api_key = api_key
 
 def generate_response(prompt):
+    return "Odpowiedź to: " + str(rand(0, 100))
     completions = openai.Completion.create(
         engine = "text-davinci-003",
         prompt = prompt,
@@ -42,7 +43,6 @@ if user_input:
 
 
 if st.session_state['generated']:
-    
     for i in range(len(st.session_state['generated'])-1, -1, -1):
         message(st.session_state["generated"][i], key=str(i))
         message(st.session_state['past'][i], is_user=True, key=str(i) + '_user')

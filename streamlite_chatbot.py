@@ -1,4 +1,8 @@
-#import openai
+pip install streamlit
+pip install streamlit-chat
+pip install openai
+
+import openai
 import os
 import pandas as pd
 import streamlit as st

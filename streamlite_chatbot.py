@@ -4,11 +4,10 @@ import pandas as pd
 import streamlit as st
 from streamlit_chat import message
 st.title('Virtual Therapist')
-api_key = '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'
+api_key = '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'
 openai.api_key = api_key
 
 def generate_response(prompt):
-    return "Odpowiedź to: " + str(rand(0, 100))
     completions = openai.Completion.create(
         engine = "text-davinci-003",
         prompt = prompt,

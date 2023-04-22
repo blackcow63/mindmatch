@@ -8,7 +8,6 @@ api_key = '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'
 openai.api_key = api_key
 
 def generate_response(prompt):
-    return "Dziekuje za Twoja wiadomosc. Nie jestem jeszcze w stanie odpowiedziec na Twoje pytanie. Zostanie ono przekazane do mojego programisty. Pozdrawiam"
     completions = openai.Completion.create(
         engine = "text-davinci-003",
         prompt = prompt,
@@ -18,7 +17,7 @@ def generate_response(prompt):
         temperature=0.5,
     )
     message = completions.choices[0].text
-    return message #bla bla bla
+    return message
 
 # Storing the chat
 if 'generated' not in st.session_state:

@@ -6,13 +6,9 @@ from streamlit_chat import message
 st.title('Virtual Therapist')
 api_key = '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'
 openai.api_key = api_key
-article_text = st.text_area("Enter your scientific texts to summarize")
-output_size = st.radio( label = "What kind of output do you want?", 
-                        options= ["To-The-Point", "Concise", "Detailed"]
-                     )
 
 def generate_response(prompt):
-    return prompt
+    return "Dziekuje za Twoja wiadomosc. Nie jestem jeszcze w stanie odpowiedziec na Twoje pytanie. Zostanie ono przekazane do mojego programisty. Pozdrawiam"
     completions = openai.Completion.create(
         engine = "text-davinci-003",
         prompt = prompt,

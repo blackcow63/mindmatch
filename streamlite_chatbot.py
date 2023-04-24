@@ -13,7 +13,7 @@ def generate_response(prompt):
         engine = "text-davinci-003",
         prompt_prefix = "Jesteś psychoterapeutą. Odpowiedz pacjentowi na tą wiadomość" + prompt
         prompt = prompt,
-        max_tokens = 800,
+        max_tokens = 400,
         n = 1,
         stop = None,
         temperature=0.5,

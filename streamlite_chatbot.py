@@ -10,7 +10,7 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def generate_response(prompt):
     completions = openai.Completion.create(
-        engine = "text-davinci-003",
+        engine = "gpt-3.5-turbo",
         prompt_prefix = "Jesteś psychoterapeutą. Odpowiedz pacjentowi na tą wiadomość jako psychoterapeuta w formie drugiej liczby pojedyńczej" + prompt
         prompt = prompt,
         max_tokens = 400,

@@ -11,14 +11,14 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 def generate_response(prompt):
     completions = openai.Completion.create(
         engine = "gpt-3.5-turbo",
-        prompt_prefix = "Lubię placki" #"You are a therapist. Reply in Polish AS A THERAPIST to this message:" + "'" +prompt + "Co mogę z tym zrobić?" + "'",
+        prompt_prefix = "You are a therapist. Reply in Polish AS A THERAPIST to this message:" + "'" +prompt + "Co mogę z tym zrobić?" + "'",
         prompt = prompt,
         max_tokens = 400,
         n = 1,
         stop = None,
         temperature=0.5,
     )
-    message = completions.choices[0].text
+    message = "a" #completions.choices[0].text
     return message
 
 # Storing the chat

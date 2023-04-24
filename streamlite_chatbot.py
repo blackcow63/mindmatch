@@ -11,7 +11,7 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 def generate_response(prompt):
     completions = openai.Completion.create(
         engine = "gpt-3.5-turbo",
-        prompt_prefix = "Jesteś psychoterapeutą. Odpowiedz pacjentowi na tą wiadomość w 2 osobie liczby pojedyńczej:" + "'" +prompt + "Co mogę z tym zrobić?" + "'",
+        prompt_prefix = "You are a therapist. Reply in Polish AS A THERAPIST to this message:" + "'" +prompt + "Co mogę z tym zrobić?" + "'",
         prompt = prompt,
         max_tokens = 400,
         n = 1,

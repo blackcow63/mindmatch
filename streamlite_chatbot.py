@@ -5,7 +5,8 @@ import streamlit as st
 from streamlit_chat import message
 st.title('Virtual Therapist')
 api_key = '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'#
-openai.api_key = api_key
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def generate_response(prompt):
     completions = openai.Completion.create(
@@ -29,7 +30,7 @@ if 'past' not in st.session_state:
 #TEST
 # We will get the user's input by calling the get_text function
 def get_text():
-    input_text = st.text_input("Wirtualny Terapeuta:","Ostatnio nie czuję się najlepiej", key="input")
+    input_text = st.text_input("Ty:","Ostatnio nie czuję się najlepiej", key="input")
     return input_text
 
 user_input = get_text()

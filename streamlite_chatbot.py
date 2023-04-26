@@ -52,7 +52,7 @@ if user_input:
     if len(st.session_state.messages) == 12:
         st.session_state.messages.append({
             "role": "user",
-            "content": "Podaj współrzędne w układzie kartezjańskim [depresja, lęk, agresja, anoreksja, bulimia, zaburzenia lękowe, zaburzenia osobowości, zaburzenia zachowania, zaburzenia seksualne, zaburzenia somatyczne, zaburzenia społeczne] np. [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.1, 0.2] na podstawie wcześniejszych rozmów.",
+            "content": "Podaj najlepiej jak potrafisz współrzędne w układzie kartezjańskim [depresja, anoreksja, bulimia, zaburzenia lękowe, zaburzenia osobowości, zaburzenia seksualne, adhd, dwubiegunowa choroba afektywna] w skali od 1 do 10, posortowane od największej do najmniejszej.",
         })
 
     output = generate_response(st.session_state.messages)

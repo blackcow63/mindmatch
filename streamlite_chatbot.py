@@ -8,15 +8,18 @@ st.title('Virtual Therapist')
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-def generate_response(input):
+messages = [
+    {
+        "role": "system",
+        "content": "Jesteś terpeutą. Odpowiadaj na wiadomoci tak aby dowiedzieć się jak najwięcej o objawach. Gdy zidentyfikujesz chorob krzyknij eureka! i powiedz jej nazwę.",
+    }
+]
+
+
+def generate_response(messages):
     completions = openai.ChatCompletion.create(
         model = "gpt-3.5-turbo",
-        messages = [
-            {
-                "role": "user",
-                "content": "Jesteś terpeutą. Odpowiedz na tą wiadomość tak aby dowiedzieć się jak najwięcej o objawach:" + "'" + input + "'",
-            }
-        ]
+        messages = messages,
     )
     message = completions.choices[0].message.content
     return message
@@ -37,7 +40,17 @@ def get_text():
 user_input = get_text()
 
 if user_input:
-    output = generate_response(user_input)
+    messages.append({
+        "role": "user",
+        "content": user_input,
+    })
+
+    output = generate_response(messages)
+    #add output to the messages
+    messages.append({
+        "role": "assistant",
+        "content": output,
+    })
     # store the output 
     st.session_state.past.append(user_input)
     st.session_state.generated.append(output)

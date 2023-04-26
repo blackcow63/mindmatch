@@ -56,7 +56,7 @@ if user_input:
     })
     # store the output \
     st.session_state.past.append(user_input)
-    st.session_state.generated.append(output + '\n' +'Log: ' + str(st.session_state.messages))
+    st.session_state.generated.append(output)
 
 
 if st.session_state['generated']:

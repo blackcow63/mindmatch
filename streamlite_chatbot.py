@@ -48,6 +48,13 @@ if user_input:
         "content": user_input,
     })
 
+    #if already 5 messages, add system message
+    if len(st.session_state.messages) == 5:
+        st.session_state.messages.append({
+            "role": "system",
+            "content": "Powiedz koń",
+        })
+
     output = generate_response(st.session_state.messages)
     #add output to the messages
     st.session_state.messages.append({

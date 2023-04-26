@@ -8,12 +8,13 @@ st.title('Virtual Therapist')
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-messages = [
-    {
-        "role": "system",
-        "content": "Jesteś terpeutą. Odpowiadaj na wiadomoci tak aby dowiedzieć się jak najwięcej o objawach. Gdy zidentyfikujesz chorob krzyknij eureka! i powiedz jej nazwę.",
-    }
-]
+if(not st.session_state['messages']):
+    messages = [
+        {
+            "role": "system",
+            "content": "Jesteś terpeutą. Odpowiadaj na wiadomoci tak aby dowiedzieć się jak najwięcej o objawach. Gdy zidentyfikujesz chorob krzyknij eureka! i powiedz jej nazwę.",
+        }
+    ]
 
 
 def generate_response(messages):

@@ -45,6 +45,7 @@ if user_input:
         "content": user_input,
     })
 
+    print(messages)
     output = generate_response(messages)
     #add output to the messages
     messages.append({

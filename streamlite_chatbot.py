@@ -9,7 +9,7 @@ st.title('Virtual Therapist')
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def generate_response(input):
-    completions = openai.Completion.create(
+    completions = openai.ChatCompletion.create(
         engine = "gpt-3.5-turbo",
         prompt = "Jesteś terpeutą. Odpowiedz na tą wiadomość tak aby dowiedzieć się jak najwięcej o objawach:" + "'" + input + "'",
         max_tokens = 400,

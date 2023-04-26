@@ -10,12 +10,13 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 def generate_response(input):
     completions = openai.ChatCompletion.create(
-        engine = "gpt-3.5-turbo",
-        prompt = "Jesteś terpeutą. Odpowiedz na tą wiadomość tak aby dowiedzieć się jak najwięcej o objawach:" + "'" + input + "'",
-        max_tokens = 400,
-        n = 1,
-        stop = None,
-        temperature=0.7,
+        model = "gpt-3.5-turbo",
+        messages = [
+            {
+                "role": "user",
+                "content": "Jesteś terpeutą. Odpowiedz na tą wiadomość tak aby dowiedzieć się jak najwięcej o objawach:" + "'" + input + "'",
+            }
+        ]
     )
     message = "a" #completions.choices[0].text
     return message

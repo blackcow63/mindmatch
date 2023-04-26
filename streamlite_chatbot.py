@@ -12,7 +12,7 @@ if 'messages' not in st.session_state:
     st.session_state.messages = [
         {
             "role": "system",
-            "content": "Jesteś terpeutą. Odpowiadaj na wiadomoci tak aby dowiedzieć się jak najwięcej o objawach. Gdy zidentyfikujesz chorob krzyknij eureka! i powiedz jej nazwę.",
+            "content": "Jesteś psychoterapeutą. Odpowiadaj na wiadomoci tak aby dowiedzieć się jak najwięcej o objawach. Gdy zidentyfikujesz chorob krzyknij eureka! i powiedz jej nazwę.",
         }
     ]
 

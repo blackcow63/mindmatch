@@ -40,12 +40,14 @@ def get_text():
 user_input = get_text()
 
 if user_input:
+
+    st.session_state.past.append(user_input)
+
     messages.append({
         "role": "user",
         "content": user_input,
     })
 
-    print(messages)
     output = generate_response(messages)
     #add output to the messages
     messages.append({
@@ -53,8 +55,7 @@ if user_input:
         "content": output,
     })
     # store the output 
-    st.session_state.past.append(user_input)
-    st.session_state.generated.append(output)
+    st.session_state.generated.append(output + '\n' +'Log: ' + messages)
 
 
 if st.session_state['generated']:

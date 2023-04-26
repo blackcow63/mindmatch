@@ -51,7 +51,7 @@ if user_input:
     #if already 5 messages, add system message
     if len(st.session_state.messages) == 5:
         st.session_state.messages.append({
-            "role": "system",
+            "role": "user",
             "content": "Powiedz koń",
         })
 

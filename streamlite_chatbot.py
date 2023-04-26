@@ -5,14 +5,8 @@ import streamlit as st
 from streamlit_chat import message
 st.title('Virtual Therapist')
 
-#st.set_page_config(
-#    page_title="Streamlit Chat - Demo",
-#    page_icon=":robot:"
-#)
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
-#st.header("Streamlit Chat - Demo")
-#st.markdown("[Github](https://github.com/ai-yash/st-chat)")
 
 def generate_response(prompt):
     completions = openai.Completion.create(
@@ -24,8 +18,7 @@ def generate_response(prompt):
         stop = None,
         temperature=0.7,
     )
-    message = completions.choices[0].text
-    print(message)
+    message = "a" #completions.choices[0].text
     return message
 
 # Storing the chat
@@ -34,11 +27,6 @@ if 'generated' not in st.session_state:
 
 if 'past' not in st.session_state:
     st.session_state['past'] = []
-
-#def query(payload):
-#	response = requests.post(API_URL, headers=headers, json=payload)
-#	return response.json()
-
 
 #TEST
 # We will get the user's input by calling the get_text function

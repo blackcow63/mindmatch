@@ -9,7 +9,7 @@ st.title('Virtual Therapist')
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 if 'messages' not in st.session_state:
-    st.session_state['messages'] = [
+    st.session_state.messages = [
         {
             "role": "system",
             "content": "Jesteś terpeutą. Odpowiadaj na wiadomoci tak aby dowiedzieć się jak najwięcej o objawach. Gdy zidentyfikujesz chorob krzyknij eureka! i powiedz jej nazwę.",
@@ -43,14 +43,14 @@ user_input = get_text()
 if user_input:
 
 
-    st.session_state['messages'].append({
+    st.session_state.messages.append({
         "role": "user",
         "content": user_input,
     })
 
-    output = generate_response(st.session_state['messages'])
+    output = generate_response(st.session_state.messages)
     #add output to the messages
-    st.session_state['messages'].append({
+    st.session_state.messages.append({
         "role": "assistant",
         "content": output,
     })

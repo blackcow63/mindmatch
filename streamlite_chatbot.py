@@ -18,7 +18,7 @@ def generate_response(input):
             }
         ]
     )
-    message = "a" #completions.choices[0].text
+    message = completions.choices[0].message.content
     return message
 
 # Storing the chat

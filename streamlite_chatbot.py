@@ -55,7 +55,7 @@ if user_input:
         "content": output,
     })
     # store the output 
-    st.session_state.generated.append(output + '\n' +'Log: ' + messages)
+    st.session_state.generated.append(output + '\n' +'Log: ' + str(messages))
 
 
 if st.session_state['generated']:
